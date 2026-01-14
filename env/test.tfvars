@@ -1,5 +1,5 @@
 environment_name = "test"
-instance_count = 4
+instance_count = 7
 enabled = true
 regions = ["us-east-1", "us-west-2"]
 region_instance_count = {
