@@ -11,7 +11,7 @@ output "suffix" {
   value = random_string.suffix.result
 }
 output "api_key" {
-  value = "${var.api_key}"
+  value     = var.api_key
   sensitive = true
 }
 output "instance_count" {
@@ -38,4 +38,13 @@ output "primary_region_instance_count" {
 # }
 output "sku_settings" {
   value = "${var.sku_settings.kind}-${var.sku_settings.tier}"
+}
+output "alpha" {
+  value = module.alpha.random_string
+}
+output "bravo" {
+  value = module.bravo.random_string
+}
+output "charlie" {
+  value = module.charlie.random_string
 }

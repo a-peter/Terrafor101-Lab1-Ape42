@@ -10,14 +10,14 @@ variable "environment_name" {
   type = string
 }
 variable "api_key" {
-  type = string
-   sensitive = true
+  type      = string
+  sensitive = true
 }
 variable "instance_count" {
   type = number
 
   validation {
-    condition = var.instance_count >= local.min_nodes && var.instance_count <= local.max_nodes && var.instance_count % 2 == 1
+    condition     = var.instance_count >= local.min_nodes && var.instance_count <= local.max_nodes && var.instance_count % 2 == 1
     error_message = "Must be between 5 and 9 and an odd number"
   }
 }
