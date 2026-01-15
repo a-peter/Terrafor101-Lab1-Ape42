@@ -33,18 +33,12 @@ output "primary_region_instance_count" {
   # value = lookup(var.region_instance_count, var.regions[0], 0)
   value = var.region_instance_count[var.regions[0]]
 }
-# output "region_set" {
-#   value = var.region_set[0]
-# }
-output "sku_settings" {
-  value = "${var.sku_settings.kind}-${var.sku_settings.tier}"
+output "regionA" {
+  value = module.regional_stamps[0].name
 }
-output "alpha" {
-  value = module.alpha.random_string
+output "regionB" {
+  value = module.regional_stamps[1].name
 }
-output "bravo" {
-  value = module.bravo.random_string
-}
-output "charlie" {
-  value = module.charlie.random_string
+output "all_regions" {
+  value = module.regional_stamps[*].name
 }
