@@ -34,11 +34,11 @@ output "primary_region_instance_count" {
   value = var.region_instance_count[var.regions[0]]
 }
 output "regionA" {
-  value = module.regional_stamps[0].name
+  value = module.regional_stamps["foo"].name
 }
 output "regionB" {
-  value = module.regional_stamps[1].name
+  value = module.regional_stamps["bar"].name
 }
 output "all_regions" {
-  value = module.regional_stamps[*].name
+  value = [for region in module.regional_stamps: "${region.name} - ${region.random_string}"]
 }
